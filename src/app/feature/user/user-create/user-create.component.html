@@ -1,0 +1,79 @@
+<section class="heading">
+    <span class="component-title">[{{title}}]</span>
+  </section>
+ 
+  <main class="single">
+    <table class="table table-sm">
+      <tr>
+        <td>
+            userName:
+        </td>
+        <td>
+            <input [(ngModel)]="user.userName" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            PassWord:
+        </td>
+        <td>
+            <input [(ngModel)]="user.PassWord" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            firstName:
+        </td>
+        <td>
+            <input [(ngModel)]="user.firstName" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+           lastName:
+        </td>
+        <td>
+            <input [(ngModel)]="user.lastName" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+           phoneNumber:
+        </td>
+        <td>
+            <input [(ngModel)]="user.phonenumber" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+           email:
+        </td>
+        <td>
+            <input [(ngModel)]="user.email" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <tr>
+          <td>
+              Reviewer:
+          </td>
+          <td>
+              <input [(ngModel)]="user.isReviewer" class="rounded" type="checkbox">
+          </td>
+      </tr>
+      <tr>
+        <tr>
+          <td>
+              Admin:
+          </td>
+          <td>
+              <input [(ngModel)]="user.isAmin" class="rounded" type="checkbox">
+          </td>
+      </tr>
+    </table>
+  </main>
+  <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span> |
+ <!--
+  <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span>
+-->
+

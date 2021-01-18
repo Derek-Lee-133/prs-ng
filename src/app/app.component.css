@@ -1,0 +1,12 @@
+table,th,td{
+    border: 1px solid black;
+    border: 3px double black;
+    border-radius: 3px;
+  }
+h1 {
+    background-color: blue;
+    text-align-last: center;
+}
+h2 {text-align: center;
+    text-shadow: 2px 2px blue;
+}
