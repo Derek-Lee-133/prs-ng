@@ -8,7 +8,7 @@
   <table class="table table-sm table-striped">
   <thead>
       <tr>
-        <th>Id</th><th>name</th><th>password</th><th>firstName</th><th>lastName</th><th>phoneNumber</th><th>email</th><th>isReviewer</th><th>isAmin</th><th>Action</th>
+        <th>Id</th><th>name</th><th>passWord</th><th>firstName</th><th>lastName</th><th>phoneNumber</th><th>email</th><th>isReviewer</th><th>isAmin</th><th>Action</th>
       </tr>
   </thead>
   <tbody>
@@ -20,8 +20,8 @@
       <td>{{user.lastName}}</td>
       <td>{{user.phonenumber}}</td>
       <td>{{user.email}}</td>
-      <td>{{user.isReviewer}}</td>
-      <td>{{user.isAmin}}</td>
+      <td>{{user.isReviewer? "true" : "false" }}</td>
+      <td>{{user.admin ? "true" : "false" }}</td>
       <td><a routerLink='/user-detail/{{user.id}}'>
         <img width='20' height='20' src='assets/details.png' title='user Details'></a> | 
         <a routerLink='/user-edit/{{user.id}}'>

@@ -8,8 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
-import { MenuComponent } from './core/menu/menu.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { MenuComponent } from './core/menu/menu.component';
+
+
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
     UserCreateComponent,
     UserEditComponent,
     MenuComponent,
+    UserListComponent,
     UserLoginComponent
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,

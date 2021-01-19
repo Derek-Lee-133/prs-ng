@@ -5,8 +5,8 @@ export class User {
      passWord: string;
      firstName: string;
      lastName: string;
-     phoneNumber: string;
-     eamil: string;
+     phonenumber: string;
+     email: string;
      isReviewer: boolean;
      isAdmin: boolean;
 
@@ -16,8 +16,8 @@ export class User {
           this.passWord = passWord;
           this.firstName = firstName;
           this.lastName = lastName;
-          this.phoneNumber = phoneNumber;
-          this.eamil = email;
+          this.phonenumber = phoneNumber;
+          this.email = email;
           this.isReviewer = isReviewer;
           this.isAdmin = isAdmin;
 
