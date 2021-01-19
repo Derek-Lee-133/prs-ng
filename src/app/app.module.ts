@@ -7,13 +7,19 @@ import { UserListComponent } from './feature/user/user-list/user-list.component'
 import { HttpClientModule } from '@angular/common/http';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
+import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
+import { MenuComponent } from './core/menu/menu.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     UserDetailComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    UserEditComponent,
+    MenuComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

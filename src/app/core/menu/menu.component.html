@@ -1,0 +1,8 @@
+<nav>
+    <ul>
+      PRS
+      <li *ngFor='let item of menuItems' title="{{item.tooltip}}">
+        <a routerLink="{{item.href}}">{{item.display}}</a>
+      </li>
+    </ul>
+  </nav>
