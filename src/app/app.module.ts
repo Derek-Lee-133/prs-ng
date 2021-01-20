@@ -10,6 +10,7 @@ import { UserCreateComponent } from './feature/user/user-create/user-create.comp
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { MenuComponent } from './core/menu/menu.component';
+import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 
 
 
@@ -22,7 +23,8 @@ import { MenuComponent } from './core/menu/menu.component';
     UserEditComponent,
     MenuComponent,
     UserListComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    VendorListComponent
 ],
   imports: [
     BrowserModule,

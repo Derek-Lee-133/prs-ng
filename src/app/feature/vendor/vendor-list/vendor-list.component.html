@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<section class="heading">
+    <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
+    <span>&nbsp;<a routerLink="/user-list">Return to List</a></span>
+    <a routerLink='/vendor-create'>
+      <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+    </a>
+  </section>
+  <table class="table table-sm table-striped">
+  <thead>
+      <tr>
+        <th>Id</th><th>code</th><th>name</th><th>address</th><th>city</th><th>state</th><th>zip</th><th>phonenumber</th><th>email</th><th>Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor= 'let vendor of vendors'>
+      <td>{{vendor.id}}</td>
+      <td>{{vendor.code}}</td>
+      <td>{{vendor.name}}</td>
+      <td>{{vendor.address}}</td>
+      <td>{{vendor.city}}</td>
+      <td>{{vendor.state}}</td>
+      <td>{{vendor.zip}}</td>
+      <td>{{vendor.phonenumber}}</td>
+      <td>{{vendor.email}}</td>
+      <td><a routerLink='/vendor-detail/{{vendor.id}}'>
+        <img width='20' height='20' src='assets/details.png' title='vendor Details'></a> | 
+        <a routerLink='/vendor-edit/{{vendor.id}}'>
+        <img width='20' height='20' src='assets/pencil-icon.png' title='vendor Edit'></a>
+     </td>
+    </tr>
+  </tbody>
+</table>
+
