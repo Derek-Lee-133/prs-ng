@@ -1,0 +1,81 @@
+<section class="heading">
+    <span class="component-title">[{{title}}]</span>
+    <span>&nbsp;<a routerLink="/vendor-list">Return to List</a></span>
+  </section>
+ 
+  <main class="single">
+    <table class="table table-sm">
+      <tr>
+        <td>
+            code:
+        </td>
+        <td>
+            <input [(ngModel)]="vendor.code" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            name:
+        </td>
+        <td>
+            <input [(ngModel)]="vendor.name" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            address:
+        </td>
+        <td>
+            <input [(ngModel)]="vendor.address" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+           city:
+        </td>
+        <td>
+            <input [(ngModel)]="vendor.city" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+           state:
+        </td>
+        <td>
+            <input [(ngModel)]="vendor.state" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+           zip:
+        </td>
+        <td>
+            <input [(ngModel)]="vendor.zip" class="rounded" type="text">
+        </td>
+      </tr>
+      <tr>
+        <tr>
+          <td>
+              phoneNumber:
+          </td>
+          <td>
+              <input [(ngModel)]="vendor.phoneNumber" class="rounded" type="text">
+          </td>
+      </tr>
+      <tr>
+        <tr>
+          <td>
+              email:
+          </td>
+          <td>
+              <input [(ngModel)]="vendor.email" class="rounded" type="text">
+          </td>
+      </tr>
+    </table>
+  </main>
+  <span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span> |
+ <!--
+  <span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span>
+-->
+
+

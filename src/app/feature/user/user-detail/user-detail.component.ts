@@ -8,7 +8,8 @@ import { UserService } from 'src/app/service/user.service';
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css']
 })
-export class UserDetailComponent implements OnInit { title = "User Detail";
+export class UserDetailComponent implements OnInit { 
+title = "User Detail";
 user: User = null;
 userId: number = 0;
 constructor(private userSvc: UserService,

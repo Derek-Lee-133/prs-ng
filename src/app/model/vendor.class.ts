@@ -6,10 +6,10 @@ export class Vendor {
     city: string;
     state: string;
     zip: string;
-    phonenumber: string;
+    phoneNumber: string;
     email: string;
 
-    constructor(id: number = 0, code: string = '', name: string = '', address: string = '', city: string = '', state: string = '', zip: string = '', phonenumber: string = '', email: string = '') {
+    constructor(id: number = 0, code: string = '', name: string = '', address: string = '', city: string = '', state: string = '', zip: string = '', phoneNumber: string = '', email: string = '') {
         this.id = id;
         this.code = code;
         this.name = name;
@@ -17,7 +17,7 @@ export class Vendor {
         this.city = city;
         this.state = state;
         this.zip = zip;
-        this.phonenumber = phonenumber;
+        this.phoneNumber = phoneNumber;
         this.email = email;
 
     }
