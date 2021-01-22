@@ -10,8 +10,8 @@ import { VendorService } from 'src/app/service/vendor.service';
 })
 export class VendorDetailComponent implements OnInit {
   title = "Vendor Detail";
-vendor: Vendor = null;
-vendorId: number = 0;
+  vendor: Vendor = null;
+  vendorId: number = 0;
 constructor(private vendorSvc: VendorService,
   private router: Router,
   private route: ActivatedRoute) { }

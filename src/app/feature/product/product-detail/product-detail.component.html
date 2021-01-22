@@ -1,0 +1,45 @@
+<div class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span>&nbsp;<a routerLink="/product-list">Return to List</a></span>
+    </section>
+    <main *ngIf='product' class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>ID</td>
+                <td>{{product.id}}</td>
+            </tr>
+            <tr>
+                <td>VendorId:</td>
+                <td><input [(ngModel)]="product.vendor.id" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>PartNumber:</td>
+                <td><input [(ngModel)]="product.partNumber" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>name:</td>
+                <td><input [(ngModel)]="product.name" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input [(ngModel)]="product.price" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Unit:</td>
+                <td><input [(ngModel)]="product.unit" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>PhotoPath:</td>
+                <td><input [(ngModel)]="product.photoPath" class="rounded" type="text" disabled></td>
+            </tr>
+        </table>
+    </main>
+    <span>
+
+        <span>&nbsp;<button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+
+    </span>
+</div>
+
+

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Vendor} from "../model/vendor.class";
+import { Vendor } from '../model/vendor.class';
+
 
 
 const URL= 'http://localhost:8080/vendors'
@@ -13,7 +14,7 @@ export class VendorService {
 
   constructor(private http: HttpClient) { }
    // service functions
-  // getAll movies
+  // getAll products
 
   getAll(): Observable<Vendor[]> {
     return this.http.get(URL+'/') as Observable<Vendor[]>;
