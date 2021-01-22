@@ -12,7 +12,7 @@ import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.co
 import { ProductListComponent } from './feature/product/product-list/product-list.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
-
+import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 
 
 
@@ -30,6 +30,7 @@ const routes: Routes = [
   {path: 'vendor-edit/:id', component: VendorEditComponent},
   {path: 'product-detail/:id', component: ProductDetailComponent},
   {path: 'product-list', component: ProductListComponent},
+  {path: 'product-edit/:id', component: ProductEditComponent},
   {path: 'product-create', component: ProductCreateComponent}
 ];
 
