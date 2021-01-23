@@ -4,7 +4,7 @@
   </section>
  
   <main class="single">
-    <table class="table table-sm">
+    <table class="table table-sm" *ngIf='user'>
       <tr>
         <td>
             userName:
@@ -59,7 +59,7 @@
               Reviewer:
           </td>
           <td>
-              <input [(ngModel)]="user.isReviewer" class="rounded" type="checkbox">
+              <input [(ngModel)]="user.reviewer" class="rounded" type="checkbox">
           </td>
       </tr>
       <tr>
@@ -68,7 +68,7 @@
               Admin:
           </td>
           <td>
-              <input [(ngModel)]="user.isAdmin" class="rounded" type="checkbox">
+              <input [(ngModel)]="user.admin" class="rounded" type="checkbox">
           </td>
       </tr>
     </table>
