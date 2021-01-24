@@ -14,6 +14,12 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { RequestListComponent } from './feature/request/request-list/request-list.component';
+import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
+import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
+import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
+
+
+
 
 
 
@@ -33,7 +39,12 @@ const routes: Routes = [
   {path: 'product-list', component: ProductListComponent},
   {path: 'product-edit/:id', component: ProductEditComponent},
   {path: 'product-create', component: ProductCreateComponent},
-  {path: 'request-list', component: RequestListComponent}
+  {path: 'request-detail/:id', component: RequestDetailComponent},
+  {path: 'request-create', component: RequestCreateComponent},
+  {path: 'request-list', component: RequestListComponent},
+  {path: 'request-edit/:id', component: RequestEditComponent},
+ 
+
 
 ];
 
