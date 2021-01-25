@@ -17,6 +17,8 @@ import { RequestListComponent } from './feature/request/request-list/request-lis
 import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
+
 
 
 
@@ -26,7 +28,7 @@ import { RequestEditComponent } from './feature/request/request-edit/request-edi
 
 const routes: Routes = [
   {path: '', redirectTo: 'user-list', pathMatch: 'full'},
-  { path: 'user-list', component: UserListComponent },
+  {path: 'user-list', component: UserListComponent },
   {path: 'user-detail/:id', component: UserDetailComponent},
   {path: 'user-create', component: UserCreateComponent},
   {path: 'user-edit/:id', component: UserEditComponent},
@@ -43,6 +45,8 @@ const routes: Routes = [
   {path: 'request-create', component: RequestCreateComponent},
   {path: 'request-list', component: RequestListComponent},
   {path: 'request-edit/:id', component: RequestEditComponent},
+  {path: 'request-lines/:id', component: RequestLinesComponent},
+
  
 
 

@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<section class="heading">
+    <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
+    <span>&nbsp;<a routerLink="/request-list">Return to List</a></span>
+    <a routerLink='/request-create'>
+      <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+    </a>
+  </section>
+  <table class="table table-sm table-striped">
+  <thead>
+      <tr>
+        <th>Id</th><th>Description</th><th>status</th><th>total</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr class="single">
+      <td>{{request.id}}</td>
+      <td>{{request.description}}</td>
+      <td>{{request.status}}</td>
+      <td>{{request.total}}</td>
+      
+    </tr>
+  </tbody>
+</table>
+
+
+
+
