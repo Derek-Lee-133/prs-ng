@@ -6,14 +6,8 @@
   <main class="single">
     <table class="table table-sm">
       <tr>
-        <td>
-            userId:
-        </td>
-        <td>
-          <select [(ngModel)]="request.user" class="rounded">
-            <option *ngFor='let user of users' [ngValue]='user'>{{user.id+ ", "+ user.userName}}</option>
-          </select>
-        </td>
+        <td>ID</td>
+                <td>{{request.user.id}}</td>
       </tr>
       <tr>
         <td>

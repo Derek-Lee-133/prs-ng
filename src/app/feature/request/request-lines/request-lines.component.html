@@ -1,28 +1,60 @@
 <app-menu></app-menu>
 <section class="heading">
-    <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
-    <span>&nbsp;<a routerLink="/request-list">Return to List</a></span>
-    <a routerLink='/request-create'>
-      <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
-    </a>
-  </section>
-  <table class="table table-sm table-striped">
+  <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
+  <span>&nbsp;<a routerLink="/request-list">Return to List</a></span>
+  <a routerLink='/request-create'>
+    <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+  </a>
+</section>
+<table class="table table-sm table-striped" *ngIf = 'request'>
   <thead>
-      <tr>
-        <th>Id</th><th>Description</th><th>status</th><th>total</th>
-      </tr>
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+      <th>status</th>
+      <th>total</th>
+    </tr>
   </thead>
   <tbody>
-      <tr class="single">
+    <tr class="single">
       <td>{{request.id}}</td>
       <td>{{request.description}}</td>
       <td>{{request.status}}</td>
       <td>{{request.total}}</td>
-      
+
     </tr>
   </tbody>
 </table>
 
-
-
-
+<section class="heading">
+  <span class="page-title font-weight-bold font-italic">[{{titleLi}}]</span>
+  <a routerLink='/product-create'>
+    <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+  </a>
+</section>
+<table class="table table-sm table-striped" *ngIf = 'lines'>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Line Total</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let line of lines'>
+      <td>{{line.id}}</td>
+      <td>{{line.product.name}}</td>
+      <td>{{line.quantity}}</td>
+      <td>{{line.product.price}}</td>
+      <td>{{line.request.total}}</td>
+      <td><a routerLink='/product-detail/{{product.id}}'>
+          <img width='20' height='20' src='assets/details.png' title='product Details'></a> |
+        <a routerLink='/product-edit/{{product.id}}'>
+          <img width='20' height='20' src='assets/pencil-icon.png' title='product Edit'></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
