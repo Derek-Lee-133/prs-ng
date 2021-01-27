@@ -28,7 +28,7 @@
 
 <section class="heading">
   <span class="page-title font-weight-bold font-italic">[{{titleLi}}]</span>
-  <a routerLink='/product-create'>
+  <a routerLink='/line-item/id'>
     <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
   </a>
 </section>
@@ -50,10 +50,11 @@
       <td>{{line.quantity}}</td>
       <td>{{line.product.price}}</td>
       <td>{{line.request.total}}</td>
-      <td><a routerLink='/product-detail/{{product.id}}'>
-          <img width='20' height='20' src='assets/details.png' title='product Details'></a> |
-        <a routerLink='/product-edit/{{product.id}}'>
-          <img width='20' height='20' src='assets/pencil-icon.png' title='product Edit'></a>
+      <td><a routerLink='/product-edit/{{product.id}}'>
+        <img width='20' height='20' src='assets/pencil-icon.png' title='product Edit'></a> |
+        <a routerLink='/product-detail/{{product.id}}'>
+          <img width='20' height='20' src='assets/delete.jpg' title='product Details'></a> 
+        
       </td>
     
     <tr *ngIf="!lines?.length > 0">

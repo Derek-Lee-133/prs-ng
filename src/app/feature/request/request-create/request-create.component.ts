@@ -13,6 +13,7 @@ export class RequestCreateComponent implements OnInit {
   title = "Request Create";
   request: Request = new Request();
   submitBtnTitle = "Create";
+  requestId = 0;
 
 
   constructor(private requestSvc: RequestService,
