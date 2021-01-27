@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/user.class';
 import { RequestService } from 'src/app/service/request.service';
-import { UserService } from 'src/app/service/user.service';
-import {Request} from '../../../model/request.class';
+import { SystemService } from 'src/app/service/system.service';
+import { Request } from '../../../model/request.class';
 
 @Component({
   selector: 'app-request-create',
@@ -14,23 +13,19 @@ export class RequestCreateComponent implements OnInit {
   title = "Request Create";
   request: Request = new Request();
   submitBtnTitle = "Create";
-  users: User[] = [];
+
 
   constructor(private requestSvc: RequestService,
-    private router: Router,
-    private userSvc: UserService) { }
+    private router: Router, private sysSvc: SystemService
 
-  ngOnInit(): void {
-    this.userSvc.getAll().subscribe(
-      resp => {
-        this.users = resp as User[];
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+  ) { }
+
+  ngOnInit(): void { // Set the request user to the current user
+    this.request.user = this.sysSvc.loggedInUser; }
+
   save() {
+
+   
     // save the user to DB
     this.requestSvc.create(this.request).subscribe(
       resp => {

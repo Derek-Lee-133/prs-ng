@@ -6,7 +6,7 @@
     <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
   </a>
 </section>
-<table class="table table-sm table-striped" *ngIf = 'request'>
+<table class="table table-sm table-striped" *ngIf='request'>
   <thead>
     <tr>
       <th>Id</th>
@@ -32,7 +32,7 @@
     <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
   </a>
 </section>
-<table class="table table-sm table-striped" *ngIf = 'lines'>
+<table class="table table-sm table-striped" *ngIf='lines'>
   <thead>
     <tr>
       <th>Id</th>
@@ -55,6 +55,18 @@
         <a routerLink='/product-edit/{{product.id}}'>
           <img width='20' height='20' src='assets/pencil-icon.png' title='product Edit'></a>
       </td>
+    
+    <tr *ngIf="!lines?.length > 0">
+    
+      <td  colspan="6" > no line items added</td>
     </tr>
+      
+      
+
+
+    <!--
+      if size of lines is 0 then display a td tag with a colspan of 6 and a message of no line items added
+
+    -->
   </tbody>
 </table>

@@ -6,8 +6,12 @@
   <main class="single">
     <table class="table table-sm">
       <tr>
-        <td>ID</td>
-                <td>{{request.user.id}}</td>
+        <td>
+            UserName:
+        </td>
+        <td>
+            <input [(ngModel)]="request.user.userName" class="rounded" type="text" disabled>
+        </td>
       </tr>
       <tr>
         <td>
@@ -30,7 +34,7 @@
             dateNeeded:
         </td>
         <td>
-            <input [(ngModel)]="request.dateNeeded" class="rounded" type="text">
+            <input [(ngModel)]="request.dateNeeded" class="rounded" type="date">
         </td>
       </tr>
       <tr>
@@ -39,38 +43,6 @@
         </td>
         <td>
             <input [(ngModel)]="request.deliveryMode" class="rounded" type="text">
-        </td>
-      </tr>
-      <tr>
-        <td>
-            status:
-        </td>
-        <td>
-            <input [(ngModel)]="request.status" class="rounded" type="text">
-        </td>
-      </tr>
-      <tr>
-        <td>
-            total:
-        </td>
-        <td>
-            <input [(ngModel)]="request.total" class="rounded" type="text">
-        </td>
-      </tr>
-      <tr>
-        <td>
-            submittedDate:
-        </td>
-        <td>
-            <input [(ngModel)]="request.submittedDate" class="rounded" type="text">
-        </td>
-      </tr>
-      <tr>
-        <td>
-            reasonForRejection:
-        </td>
-        <td>
-            <input [(ngModel)]="request.reasonForRejection" class="rounded" type="text">
         </td>
       </tr>
     </table>

@@ -23,6 +23,7 @@ import { RequestDetailComponent } from './feature/request/request-detail/request
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
+import { LineItemComponent } from './feature/line-item/line-item.component';
 
 
 
@@ -49,6 +50,7 @@ import { RequestLinesComponent } from './feature/request/request-lines/request-l
     RequestCreateComponent,
     RequestEditComponent,
     RequestLinesComponent,
+    LineItemComponent,
    
 ],
   imports: [
