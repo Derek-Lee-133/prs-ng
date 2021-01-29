@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Request} from '../model/request.class';
-import {lineItem} from '../model/line-item';
+
 
 
 const URL= 'http://localhost:8080/requests'
@@ -40,8 +40,6 @@ export class RequestService {
   login(product: Request): Observable<Request> {
     return this.http.post(URL+'/login', product) as Observable<Request>;
   }
-  // get all line-items by request id
-  getAllLineItemsByRequestId(id): Observable<lineItem[]> {
-    return this.http.get(URL + '/lines-for-pr' + id) as Observable<lineItem[]>;
-  }
+
+  
 }

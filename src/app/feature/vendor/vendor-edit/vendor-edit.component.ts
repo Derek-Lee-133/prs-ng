@@ -12,7 +12,7 @@ export class VendorEditComponent implements OnInit {
   title = "Vendor Edit";
   vendor: Vendor = null;
   vendorId: number = 0;
-  submitBtnTitle = "Save";
+  submitBtnTitle = "Save Changes";
 
 
   constructor(private vendorSvc: VendorService,

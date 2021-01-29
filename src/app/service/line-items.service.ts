@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LineItem } from '../model/line-item';
 
-import {lineItem} from '../model/line-item';
+
 
 
 
@@ -19,31 +20,32 @@ const URL= 'http://localhost:8080/line-items'
     // service functions
     // getAll requests
   
-    getAll(): Observable<lineItem[]> {
-      return this.http.get(URL+'/') as Observable<lineItem[]>;
+    getAll(): Observable<LineItem[]> {
+      return this.http.get(URL+'/') as Observable<LineItem[]>;
     }
-    getById(id): Observable<lineItem> {
-      return this.http.get(URL + '/' + id) as Observable<lineItem>;
+    getById(id): Observable<LineItem> {
+      return this.http.get(URL + '/' + id) as Observable<LineItem>;
     }
-     // lineItem create
-     create(lineItem:lineItem): Observable<lineItem> {
-      return this.http.post(URL+'/',lineItem) as Observable<lineItem>;
+     // LineItem create
+     create(LineItem:LineItem): Observable<LineItem> {
+       console.log("add a LineItem",LineItem)
+      return this.http.post(URL+'/',LineItem) as Observable<LineItem>;
     }
-     // update lineItem
-     update(lineItem: lineItem): Observable<lineItem> {
-      return this.http.put(URL + '/', lineItem) as Observable<lineItem>;
+     // update LineItem
+     update(LineItem: LineItem): Observable<LineItem> {
+      return this.http.put(URL + '/', LineItem) as Observable<LineItem>;
     }
-    // delete lineItem
-    delete(id): Observable<lineItem> {
-      return this.http.delete(URL + '/' + id) as Observable<lineItem>;
+    // delete LineItem
+    delete(id): Observable<LineItem> {
+      return this.http.delete(URL + '/' + id) as Observable<LineItem>;
     }
     // login
-    login(product: lineItem): Observable<lineItem> {
-      return this.http.post(URL+'/login', product) as Observable<lineItem>;
+    login(product: LineItem): Observable<LineItem> {
+      return this.http.post(URL+'/login', product) as Observable<LineItem>;
     }
     // get all line-items by request id
-    getAllLineItemsByRequestId(id): Observable<lineItem[]> {
-      return this.http.get(URL + '/lines-for-pr/' + id) as Observable<lineItem[]>;
+    getAllLineItemsByRequestId(id): Observable<LineItem[]> {
+      return this.http.get(URL + '/lines-for-pr/' + id) as Observable<LineItem[]>;
     }
   }
   

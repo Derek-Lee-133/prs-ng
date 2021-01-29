@@ -4,6 +4,7 @@ import { User } from 'src/app/model/user.class';
 import { RequestService } from 'src/app/service/request.service';
 import { UserService } from 'src/app/service/user.service';
 import {Request} from '../../../model/request.class';
+
 @Component({
   selector: 'app-request-edit',
   templateUrl: './request-edit.component.html',

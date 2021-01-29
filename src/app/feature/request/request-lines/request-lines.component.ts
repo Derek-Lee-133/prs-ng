@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { lineItem } from 'src/app/model/line-item';
+import { LineItem } from 'src/app/model/line-item';
 import { RequestService } from 'src/app/service/request.service';
 import { Request } from '../../../model/request.class';
 import {LineItemService} from '../../../service/line-items.service';
@@ -17,7 +17,7 @@ export class RequestLinesComponent implements OnInit {
   titleLi= "Lines";
   request: Request = null;
   requestId: number = 0;
-  lines: lineItem[] = [];
+  lines: LineItem[] = [];
 
   constructor(private requestSvc: RequestService,
     private lineItemSvc: LineItemService,
@@ -46,7 +46,7 @@ export class RequestLinesComponent implements OnInit {
     // get line-items by request id
     this.lineItemSvc.getAllLineItemsByRequestId(this.requestId).subscribe(
       resp => {
-        this.lines = resp as lineItem[];
+        this.lines = resp as LineItem[];
         console.log('lineItem', this.lines);
       },
       err => {

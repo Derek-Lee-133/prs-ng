@@ -18,14 +18,8 @@ import { RequestDetailComponent } from './feature/request/request-detail/request
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
-import { LineItemComponent } from './feature/line-item/line-item.component';
-
-
-
-
-
-
-
+import { LineItemCreateComponent } from './feature/line-item/line-item-create/line-item-create.component';
+import { LineItemEditComponent } from './feature/line-item/line-item-edit/line-item-edit.component';
 
 
 const routes: Routes = [
@@ -48,7 +42,8 @@ const routes: Routes = [
   {path: 'request-list', component: RequestListComponent},
   {path: 'request-edit/:id', component: RequestEditComponent},
   {path: 'request-lines/:id', component: RequestLinesComponent},
-  {path: 'line-item/:id', component: LineItemComponent}
+  {path: 'line-item-create/:id', component: LineItemCreateComponent},
+  {path: 'line-item-edit/:id', component: LineItemEditComponent}
 
  
 
