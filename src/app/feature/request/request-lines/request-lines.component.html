@@ -50,7 +50,7 @@
       <td>{{line.quantity}}</td>
       <td>{{line.product.price | currency}}</td>
       <td>{{line.product.price * line.quantity | currency}}</td>
-      <td> <a routerLink='/line-item-edit/{{request.id}}'>
+      <td> <a routerLink='/line-item-edit/{{line.id}}'>
         <img width='20' height='20' src='assets/pencil-icon.png' title='lineItem Edit'></a>  <!--|
         <a routerLink='/product-detail/{{product.id}}'>
           <img width='20' height='20' src='assets/delete.jpg' title='product Details'></a> 
