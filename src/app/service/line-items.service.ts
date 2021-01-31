@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LineItem } from '../model/line-item';
+import { Product } from '../model/product.class';
 
 
 
@@ -47,5 +48,7 @@ const URL= 'http://localhost:8080/line-items'
     getAllLineItemsByRequestId(id): Observable<LineItem[]> {
       return this.http.get(URL + '/lines-for-pr/' + id) as Observable<LineItem[]>;
     }
+    compProduct(a: Product, b: Product): boolean {
+      return a && b && a.id === b.id;
   }
   
