@@ -37,8 +37,14 @@ export class RequestService {
     return this.http.delete(URL + '/' + id) as Observable<Request>;
   }
   // login
-  login(product: Request): Observable<Request> {
-    return this.http.post(URL+'/login', product) as Observable<Request>;
+  login(request: Request): Observable<Request> {
+    return this.http.post(URL+'/login', request) as Observable<Request>;
+  }
+  // submit for review
+  submitForReview(request:Request): Observable<Request> {
+    console.log("submit-review:",request);
+    return this.http.put(URL+'/submit-review', request) as Observable <Request>
+
   }
 
   
