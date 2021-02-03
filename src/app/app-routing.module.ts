@@ -20,6 +20,8 @@ import { RequestEditComponent } from './feature/request/request-edit/request-edi
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 import { LineItemCreateComponent } from './feature/line-item/line-item-create/line-item-create.component';
 import { LineItemEditComponent } from './feature/line-item/line-item-edit/line-item-edit.component';
+import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
+
 
 
 const routes: Routes = [
@@ -43,7 +45,9 @@ const routes: Routes = [
   {path: 'request-edit/:id', component: RequestEditComponent},
   {path: 'request-lines/:id', component: RequestLinesComponent},
   {path: 'line-item-create/:id', component: LineItemCreateComponent},
-  {path: 'line-item-edit/:id', component: LineItemEditComponent}
+  {path: 'line-item-edit/:id', component: LineItemEditComponent},
+  {path: 'request-review', component: RequestReviewComponent},
+
 
  
 
