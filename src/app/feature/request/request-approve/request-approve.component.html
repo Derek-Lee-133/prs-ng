@@ -2,10 +2,8 @@
   <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
 </section>
 <span *ngIf = 'request'>&nbsp;<a routerLink="/request-list">Return to List</a></span>
-<a routerLink='/request-approve'>
-  
-</a>
-<table  class="table table-sm table-striped" >
+<a routerLink='/request-list'></a>
+<table *ngIf = 'request' class="table table-sm table-striped" >
   <thead>
     <tr>
       <th>Id</th>
@@ -16,13 +14,35 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="single">
+    <tr>
       <td>{{request.id}}</td>
       <td>{{request.user.userName}}</td>
       <td>{{request.description}}</td>
       <td>{{request.status}}</td>
       <td>{{request.total | currency}}</td>
-
     </tr>
   </tbody>
+</table>
+    <section class="heading" >
+      <span class="page-title font-weight-bold font-italic">[{{titleLi}}]</span>
+      
+    </section>
+    <table *ngIf='lines' width = 100%; class="table table-sm table-striped" >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Line Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let line of lines' class = single >
+          <td>{{line.id}}</td>
+          <td>{{line.product.name + "[" + line.product.id + "]"}}</td>
+          <td>{{line.quantity}}</td>
+          <td>{{line.product.price | currency}}</td>
+          <td>{{line.product.price * line.quantity | currency}}</td>
+       </tbody>
 </table>
