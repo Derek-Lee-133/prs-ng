@@ -35,7 +35,7 @@ export class RequestEditComponent implements OnInit {
         console.log(this.requestId);
       }
     );
-    // get user by id
+    // get request by id
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;

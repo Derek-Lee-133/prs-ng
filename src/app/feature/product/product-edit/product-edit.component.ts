@@ -37,7 +37,7 @@ export class ProductEditComponent implements OnInit {
         console.log(this.productId);
       }
     );
-    // get user by id
+    // get product by id
     this.productSvc.getById(this.productId).subscribe(
       resp => {
         this.product = resp as Product;

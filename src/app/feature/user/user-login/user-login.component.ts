@@ -19,8 +19,8 @@ export class UserLoginComponent implements OnInit {
     private sysSvc: SystemService) { }
 
   ngOnInit(): void {
-    this.user.userName = "DLee";
-    this.user.passWord = "XXXXX"
+    this.user.userName = "QLee";
+    this.user.passWord = "TOPIA"
   }
 
   login() {
