@@ -9,6 +9,7 @@
   <thead>
     <tr>
       <th>Id</th>
+      <th>UserName</th>
       <th>Description</th>
       <th>status</th>
       <th>total</th>
@@ -17,6 +18,7 @@
   <tbody>
     <tr class="single">
       <td>{{request.id}}</td>
+      <td>{{request.user.userName}}</td>
       <td>{{request.description}}</td>
       <td>{{request.status}}</td>
       <td>{{request.total | currency}}</td>
