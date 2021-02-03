@@ -1,0 +1,35 @@
+<app-menu></app-menu>
+<section class="heading" *ngIf = 'requests'>
+    <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
+
+</section>
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>UserName</th>
+            <th>Description</th>
+            <th>status</th>
+            <th>total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let request of requests'>
+            <td>{{request.id}}</td>
+            <td>{{request.user.userName}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+
+
+            <!-- <td><a routerLink='/request-detail/{{request.id}}'> 
+        <img width='20' height='20' src='assets/details.png' title='request Details'></a> | 
+        <a routerLink='/request-edit/{{request.id}}'>
+        <img width='20' height='20' src='assets/pencil-icon.png' title='request Edit'></a> |
+        <a routerLink='/request-lines/{{request.id}}'>
+          <img width='20' height='20' src='assets/lines.png' title='request Lines'></a>
+     </td> -->
+        </tr>
+    </tbody>
+</table>

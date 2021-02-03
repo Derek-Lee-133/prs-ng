@@ -1,0 +1,37 @@
+<section class="heading" *ngIf = 'lineItem'>
+  <span class="component-title">[{{title}} {{lineItem.id}}]</span>
+  
+</section>
+
+<main class="single" *ngIf = 'lineItem'>
+  <table class="table table-sm" >
+    <tr>
+      <td>
+          Product:
+      </td>
+      <td>
+        <select  [(ngModel)]="lineItem.product" class="rounded" [compareWith]="compProduct
+        ">
+          <option *ngFor='let product of products' [ngValue]='product'>{{product.name }}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          Quantity:
+      </td>
+      <td>
+          <input [(ngModel)]="lineItem.quantity" class="rounded" type="text">
+      </td>
+    </tr>
+     
+  </table>
+</main>
+<span><button (click)="save()" class="btn btn-sm btn-primary">{{submitBtnTitle}}</button></span> |
+<!--
+<span><button (click)="backClicked()" class="btn btn-sm btn-primary">Back</button></span>
+-->
+
+
+
+
