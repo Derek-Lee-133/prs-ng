@@ -45,4 +45,6 @@
           <td>{{line.product.price | currency}}</td>
           <td>{{line.product.price * line.quantity | currency}}</td>
        </tbody>
+       <span><button class="btn btn-sm btn-primary" (click)="requestApprove()" >{{submitBtnTitle}}</button></span> |
+
 </table>

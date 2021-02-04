@@ -14,26 +14,27 @@ import { Request } from '../../../model/request.class';
 export class RequestApproveComponent implements OnInit {
   title = "Purchase Request Approve/Reject";
   titleLi = "lines";
-  request: Request = null ;
+  request: Request = null;
   requestId: number = 0;
   lines: LineItem[] = [];
   lineItem: LineItem = new LineItem();
-  submitBtnTitle = "Save changes";
-  
+  submitBtnTitle = "Approve";
+
 
   constructor(private requestSvc: RequestService,
     private router: Router,
     private route: ActivatedRoute,
     private lineItemSvc: LineItemService,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
-    
+
     // get the id from the url
     this.route.params.subscribe(
       parms => {
         this.requestId = parms['id'];
-      });
+      }
+    );
     // get request by id
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
@@ -44,6 +45,7 @@ export class RequestApproveComponent implements OnInit {
         console.log(err);
       }
     );
+
     // get line-items by request id
     this.lineItemSvc.getAllLineItemsByRequestId(this.requestId).subscribe(
       resp => {
@@ -55,6 +57,19 @@ export class RequestApproveComponent implements OnInit {
       }
     );
   }
+  // approve request
+  requestApprove() {
+    this.requestSvc.requestApprove(this.request).subscribe(
+      resp => {
+        this.request = resp as Request;
+        console.log('request', this.request)
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+
+
 }
-
-
