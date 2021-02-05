@@ -46,5 +46,7 @@
           <td>{{line.product.price * line.quantity | currency}}</td>
        </tbody>
        <span><button class="btn btn-sm btn-primary" (click)="requestApprove()" >{{submitBtnTitle}}</button></span> |
+       <span *ngIf = 'request' ><input [(ngModel)]="request.reasonForRejection" class="rounded" placeholder= "Reason for Rejection" type="text" ></span>
+       <span *ngIf = 'request.reasonForRejection' ><button class="btn btn-sm btn-danger" (click)="requestReject()" >{{submitBtnTitleR}}</button></span>
 
 </table>

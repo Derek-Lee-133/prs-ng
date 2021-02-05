@@ -19,6 +19,7 @@ export class RequestApproveComponent implements OnInit {
   lines: LineItem[] = [];
   lineItem: LineItem = new LineItem();
   submitBtnTitle = "Approve";
+  submitBtnTitleR = "Reject";
 
 
   constructor(private requestSvc: RequestService,
@@ -69,7 +70,21 @@ export class RequestApproveComponent implements OnInit {
       }
     );
   }
+  // request reject
+  requestReject() {
+    this.requestSvc.requestReject(this.request).subscribe(
+      resp => {
+        this.request = resp as Request;
+      },
+      err => {
+        console.log(err);
+      }
+    );
 
 
-
+  }
 }
+
+
+
+
