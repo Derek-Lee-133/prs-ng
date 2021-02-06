@@ -16,13 +16,12 @@ export class RequestReviewComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     console.log('User list - logged in User?', this.sysSvc.loggedInUser)
     // populate list of requests in review
     this.requestSvc.getReview(this.sysSvc.loggedInUser.id).subscribe(
       resp => {
         this.requests = resp as Request[];
-        console.log('Requests:',this.requests);
+        console.log('Requests:', this.requests);
       },
       err => {
         console.log(err);

@@ -68,7 +68,7 @@ export class LineItemEditComponent implements OnInit {
         this.lineItem = resp as LineItem;
         console.log('LineItem updated', this.lineItem)
         // forward to the lineItem list component
-        this.router.navigateByUrl("/lineItem-list");
+        this.router.navigateByUrl("/request-lines/" + this.lineItem.request.id);
       },
       err => {
         console.log(err);
