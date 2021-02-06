@@ -60,6 +60,9 @@ export class RequestService {
   requestReject(request: Request): Observable<Request> {
     return this.http.put(URL + '/reject', request) as Observable<Request>
   }
+  compRequest(a: Request, b: Request): boolean {
+    return a && b && a.id === b.id;
+  }
 
 
 

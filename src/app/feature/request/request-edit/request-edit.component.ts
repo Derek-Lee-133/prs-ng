@@ -46,6 +46,9 @@ export class RequestEditComponent implements OnInit {
       }
     );
   }
+  compRequest(a: Request, b: Request): boolean {
+    return a && b && a.id === b.id;
+  }
     save() {
       // save the user to DB
       this.requestSvc.create(this.request).subscribe(
