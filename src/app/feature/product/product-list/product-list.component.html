@@ -18,7 +18,7 @@
       <td>{{product.vendor.id}}</td>
       <td>{{product.partNumber}}</td>
       <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
+      <td>{{product.price | currency}}</td>
       <td>{{product.unit}}</td>
       <td>{{product.photoPath}}</td>
       <td><a routerLink='/product-detail/{{product.id}}'>
