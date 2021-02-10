@@ -14,6 +14,7 @@ export class RequestCreateComponent implements OnInit {
   request: Request = new Request();
   submitBtnTitle = "Create";
   requestId = 0;
+  delModes: Array <string> = ["Mail","PickUp"];
 
 
   constructor(private requestSvc: RequestService,
