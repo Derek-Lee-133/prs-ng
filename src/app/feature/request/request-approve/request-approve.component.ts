@@ -52,6 +52,7 @@ export class RequestApproveComponent implements OnInit {
       resp => {
         this.lines = resp as LineItem[];
         console.log('lineItem', this.lines);
+        
       },
       err => {
         console.log(err);
@@ -64,6 +65,7 @@ export class RequestApproveComponent implements OnInit {
       resp => {
         this.request = resp as Request;
         console.log('request', this.request)
+        this.router.navigateByUrl("/request-list");
       },
       err => {
         console.log(err);
@@ -75,6 +77,7 @@ export class RequestApproveComponent implements OnInit {
     this.requestSvc.requestReject(this.request).subscribe(
       resp => {
         this.request = resp as Request;
+        this.router.navigateByUrl("/request-list");
       },
       err => {
         console.log(err);

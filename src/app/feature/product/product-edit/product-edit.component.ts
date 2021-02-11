@@ -48,6 +48,9 @@ export class ProductEditComponent implements OnInit {
       }
     );
   }
+  compProduct(a: Product, b: Product): boolean {
+    return a && b && a.id === b.id;
+  }
     save() {
       // save the vendor to DB
       this.productSvc.create(this.product).subscribe(
