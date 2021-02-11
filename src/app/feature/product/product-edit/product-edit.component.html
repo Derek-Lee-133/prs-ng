@@ -8,11 +8,11 @@
     <table class="table table-sm">
       <tr>
         <td>
-            VendorId:
+            VendorName:
         </td>
         <td>
           <select [(ngModel)]="product.vendor" class="rounded" [compareWith]="compProduct">
-            <option *ngFor='let vendor of vendors' [ngValue]='vendor'>{{vendor.id+ ", "+ vendor.name}}</option>
+            <option *ngFor='let vendor of vendors' [ngValue]='vendor'>{{vendor.name}}</option>
           </select>
         </td>
       </tr>
