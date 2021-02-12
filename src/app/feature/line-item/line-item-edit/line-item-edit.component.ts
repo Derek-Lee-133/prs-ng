@@ -62,12 +62,9 @@ export class LineItemEditComponent implements OnInit {
 
 
   save() {
-    // save the lineItem to DB
     this.lineItemSvc.update(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
-        console.log('LineItem updated', this.lineItem)
-        // forward to the lineItem list component
         this.router.navigateByUrl("/request-lines/" + this.lineItem.request.id);
       },
       err => {

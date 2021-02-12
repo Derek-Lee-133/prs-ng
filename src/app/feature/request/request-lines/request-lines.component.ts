@@ -19,7 +19,7 @@ export class RequestLinesComponent implements OnInit {
   requestId: number = 0;
   lines: LineItem[] = [];
   lineItem: LineItem = new LineItem();
-  
+
 
   constructor(private requestSvc: RequestService,
     private lineItemSvc: LineItemService,
@@ -28,63 +28,54 @@ export class RequestLinesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // get the id from url
     this.route.params.subscribe(
       parms => {
         this.requestId = parms['id'];
-        console.log(this.requestId);
       }
     );
-    // get line-items by request id
     this.lineItemSvc.getAllLineItemsByRequestId(this.requestId).subscribe(
       resp => {
         this.lines = resp as LineItem[];
-        console.log('lineItem', this.lines);
       },
       err => {
         console.log(err);
       }
     );
-    // get request by id
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
-        console.log('Request', this.request);
       },
       err => {
         console.log(err);
       }
     );
 
-    
-    }
-    delete (lineItemId: number) {
-      // delete the request to DB
-      this.lineItemSvc.delete(lineItemId).subscribe(
-        resp => {
-          this.lineItem = resp as LineItem;
-
-          // forward to the request list component
-          this.ngOnInit();
-        },
-        err => {
-          console.log(err);
-        }
-      );
-    }
-    submitForReview () {
-      this.requestSvc.submitForReview(this.request).subscribe(
-       resp => { 
-         this.request = resp as Request;
-         this.router.navigateByUrl("/request-list");
-          },
-          err => {
-            console.log(err);
-          }
-      );
-
-    }
 
   }
+  delete(lineItemId: number) {
+    this.lineItemSvc.delete(lineItemId).subscribe(
+      resp => {
+        this.lineItem = resp as LineItem;
+        this.ngOnInit();
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+  submitForReview() {
+    this.requestSvc.submitForReview(this.request).subscribe(
+      resp => {
+        this.request = resp as Request;
+        this.router.navigateByUrl("/request-list");
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
+  }
+
+}
 
 

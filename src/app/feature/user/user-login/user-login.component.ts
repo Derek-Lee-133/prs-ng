@@ -24,7 +24,6 @@ export class UserLoginComponent implements OnInit {
   }
 
   login() {
-    // call login service using username and password
     this.userSvc.login(this.user).subscribe(
       resp => {
         if (resp == null) {

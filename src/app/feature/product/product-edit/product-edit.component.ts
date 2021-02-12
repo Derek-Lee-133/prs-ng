@@ -37,11 +37,9 @@ export class ProductEditComponent implements OnInit {
         console.log(this.productId);
       }
     );
-    // get product by id
     this.productSvc.getById(this.productId).subscribe(
       resp => {
         this.product = resp as Product;
-        console.log('Product', this.product);
       },
       err => {
         console.log(err);
@@ -56,7 +54,6 @@ export class ProductEditComponent implements OnInit {
       this.productSvc.create(this.product).subscribe(
         resp => {
           this.product = resp as Product;
-          console.log('Product created', this.product)
           // forward to the product list component
           this.router.navigateByUrl("/product-list");
         },

@@ -9,30 +9,27 @@ import { VendorService } from 'src/app/service/vendor.service';
   styleUrls: ['./vendor-create.component.css']
 })
 export class VendorCreateComponent implements OnInit {
-  title= "Vendor Create";
+  title = "Vendor Create";
   vendor: Vendor = new Vendor();
   submitBtnTitle = "Create";
 
-  constructor(private vendorSvc: VendorService, 
+  constructor(private vendorSvc: VendorService,
     private router: Router) { }
 
   ngOnInit(): void {
 
   }
-  save()  {
-    // save the vendor to DB
+  save() {
     this.vendorSvc.create(this.vendor).subscribe(
       resp => {
         this.vendor = resp as Vendor;
-        console.log('Vendor created' ,this.vendor)
-        // forward to the vendor list component
-          this.router.navigateByUrl("/vendor-list");
+        this.router.navigateByUrl("/vendor-list");
       },
-      err =>{
+      err => {
         console.log(err);
       }
     );
-    
+
   }
 
 }

@@ -14,7 +14,7 @@ export class RequestCreateComponent implements OnInit {
   request: Request = new Request();
   submitBtnTitle = "Create";
   requestId = 0;
-  delModes: Array <string> = ["Mail","PickUp"];
+  delModes: Array<string> = ["Mail", "PickUp"];
 
 
   constructor(private requestSvc: RequestService,
@@ -22,18 +22,15 @@ export class RequestCreateComponent implements OnInit {
 
   ) { }
 
-  ngOnInit(): void { // Set the request user to the current user
-    this.request.user = this.sysSvc.loggedInUser; }
+  ngOnInit(): void {
+    this.request.user = this.sysSvc.loggedInUser;
+  }
 
   save() {
-
-   
-    // save the user to DB
     this.requestSvc.create(this.request).subscribe(
       resp => {
         this.request = resp as Request;
         console.log('Request created', this.request)
-        // forward to the request list component
         this.router.navigateByUrl("/request-list");
       },
       err => {

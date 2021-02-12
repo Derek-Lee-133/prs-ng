@@ -36,7 +36,6 @@ export class LineItemCreateComponent implements OnInit {
     this.productSvc.getAll().subscribe(
       resp => {
         this.products = resp as Product[];
-        console.log('Products,this.product')
       },
       err => {
         console.log(err);

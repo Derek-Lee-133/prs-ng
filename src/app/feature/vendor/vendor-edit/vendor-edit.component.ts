@@ -21,18 +21,14 @@ export class VendorEditComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // get the id from url
     this.route.params.subscribe(
       parms => {
         this.vendorId = parms['id'];
-        console.log(this.vendorId);
       }
     );
-    // get vendor by id
     this.vendorSvc.getById(this.vendorId).subscribe(
       resp => {
         this.vendor = resp as Vendor;
-        console.log('Vendor', this.vendor);
       },
       err => {
         console.log(err);
@@ -40,12 +36,10 @@ export class VendorEditComponent implements OnInit {
     );
   }
   save() {
-    // save the vendor to DB
     this.vendorSvc.update(this.vendor).subscribe(
       resp => {
         this.vendor = resp as Vendor;
         console.log('Vendor updated', this.vendor)
-        // forward to the vendor list component
         this.router.navigateByUrl("/vendor-list");
       },
       err => {

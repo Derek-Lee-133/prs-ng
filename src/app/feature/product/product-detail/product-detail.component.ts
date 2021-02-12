@@ -22,14 +22,14 @@ export class ProductDetailComponent implements OnInit {
   this.route.params.subscribe(
     parms => {
       this.productId = parms['id'];
-      console.log(this.productId);
+     
     }
   );
   // get product by id
   this.productSvc.getById(this.productId).subscribe(
     resp => {
       this.product = resp as Product;
-      console.log('Product', this.product);
+     
     },
     err => {
       console.log(err);
@@ -41,7 +41,7 @@ delete() {
   this.productSvc.delete(this.product.id).subscribe(
     resp => {
       this.product = resp as Product;
-      console.log('Product deleted', this.product)
+      
       // forward to the product list component
       this.router.navigateByUrl("/product-list");
     },

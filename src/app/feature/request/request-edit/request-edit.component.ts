@@ -32,14 +32,11 @@ export class RequestEditComponent implements OnInit {
           }
         );
         this.requestId = parms['id'];
-        console.log(this.requestId);
       }
     );
-    // get request by id
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
-        console.log('Request', this.request);
       },
       err => {
         console.log(err);
@@ -50,12 +47,9 @@ export class RequestEditComponent implements OnInit {
     return a && b && a.id === b.id;
   }
     save() {
-      // save the user to DB
       this.requestSvc.create(this.request).subscribe(
         resp => {
           this.request = resp as Request;
-          console.log('Request created', this.request)
-          // forward to the request list component
           this.router.navigateByUrl("/request-list");
         },
         err => {

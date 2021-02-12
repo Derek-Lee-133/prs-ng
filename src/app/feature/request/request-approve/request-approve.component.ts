@@ -30,13 +30,11 @@ export class RequestApproveComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // get the id from the url
     this.route.params.subscribe(
       parms => {
         this.requestId = parms['id'];
       }
     );
-    // get request by id
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
@@ -46,25 +44,21 @@ export class RequestApproveComponent implements OnInit {
         console.log(err);
       }
     );
-
-    // get line-items by request id
     this.lineItemSvc.getAllLineItemsByRequestId(this.requestId).subscribe(
       resp => {
         this.lines = resp as LineItem[];
         console.log('lineItem', this.lines);
-        
+
       },
       err => {
         console.log(err);
       }
     );
   }
-  // approve request
   requestApprove() {
     this.requestSvc.requestApprove(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        console.log('request', this.request)
         this.router.navigateByUrl("/request-list");
       },
       err => {
@@ -72,7 +66,6 @@ export class RequestApproveComponent implements OnInit {
       }
     );
   }
-  // request reject
   requestReject() {
     this.requestSvc.requestReject(this.request).subscribe(
       resp => {
