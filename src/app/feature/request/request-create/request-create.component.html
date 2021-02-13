@@ -43,7 +43,8 @@
             deliveryMode:
         </td>
         <td>
-          <select [(ngModel)]="request.deliveryMode" class="rounded">
+          <select [(ngModel)]="request.deliveryMode" class="rounded"  >
+            <option value="" disabled selected hidden>Choose a method</option>
             <option *ngFor='let delMode of delModes' [ngValue]='delMode'>{{delMode}}</option>
           </select>
         </td>
