@@ -50,11 +50,9 @@ export class ProductEditComponent implements OnInit {
     return a && b && a.id === b.id;
   }
     save() {
-      // save the vendor to DB
       this.productSvc.create(this.product).subscribe(
         resp => {
           this.product = resp as Product;
-          // forward to the product list component
           this.router.navigateByUrl("/product-list");
         },
         err => {

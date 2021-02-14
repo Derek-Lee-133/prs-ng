@@ -47,13 +47,11 @@ export class LineItemCreateComponent implements OnInit {
 
 
 
-    // get the id from the url
     this.route.params.subscribe(
       parms => {
         this.requestId = parms['id'];
       });
 
-    // get the request by the request id
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
@@ -65,12 +63,10 @@ export class LineItemCreateComponent implements OnInit {
   }
   save() {
     this.lineItem.request = this.request;
-    // save the lineItem to lines
     this.lineItemSvc.create(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
         console.log('Line-Item created', this.lineItem)
-        // forward to the product list component
         this.router.navigateByUrl("/request-lines/"+ this.requestId);
       },
       err => {

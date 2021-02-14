@@ -19,14 +19,12 @@ export class RequestDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // get the id from url
     this.route.params.subscribe(
       parms => {
         this.requestId = parms['id'];
         console.log(this.requestId);
       }
     );
-    // get request by id
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
