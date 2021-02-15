@@ -33,7 +33,7 @@ export class UserLoginComponent implements OnInit {
           this.user = resp as User;
           this.sysSvc.loggedInUser = this.user;
           console.log("Successful login!", this.sysSvc.loggedInUser);
-          this.router.navigateByUrl('/user-list');
+          this.router.navigateByUrl('/request-list');
         }
       },
       err => {

@@ -27,7 +27,7 @@ import { RequestApproveComponent } from './feature/request/request-approve/reque
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'user-list', pathMatch: 'full'},
+  {path: '', redirectTo: 'user-login', pathMatch: 'full'},
   {path: 'user-list', component: UserListComponent },
   {path: 'user-detail/:id', component: UserDetailComponent},
   {path: 'user-create', component: UserCreateComponent},
