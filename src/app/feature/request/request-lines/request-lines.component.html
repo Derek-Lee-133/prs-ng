@@ -11,8 +11,8 @@
     <tr>
       <th>Id</th>
       <th>Description</th>
-      <th>status</th>
-      <th>total</th>
+      <th>Status</th>
+      <th>Total</th>
     </tr>
   </thead>
   <tbody>
@@ -26,7 +26,7 @@
   </tbody>
 </table>
 
-<section class="heading"  *ngIf='request'>
+<section class="heading" *ngIf='request'>
   <span class="page-title font-weight-bold font-italic">[{{titleLi}}]</span>
   <a routerLink='/line-item-create/{{request.id}}'>
     <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
@@ -51,24 +51,17 @@
       <td>{{line.product.price | currency}}</td>
       <td>{{line.product.price * line.quantity | currency}}</td>
       <td> <a routerLink='/line-item-edit/{{line.id}}'>
-        <img width='20' height='20' src='assets/pencil-icon.png' title='lineItem Edit'></a>  |
+          <img width='20' height='20' src='assets/pencil-icon.png' title='lineItem Edit'></a> |
         <a (click)='delete(line.id)'>
           <img width='20' height='20' src='assets/delete.jpg' title='lineItem Delete'></a>
-         
+
       </td>
-    
+
     <tr *ngIf="!lines?.length > 0">
-    
-      <td  colspan="6" > no line items added</td>
+
+      <td colspan="6"> no line items added</td>
     </tr>
-      
-      
 
-
-    <!--
-      if size of lines is 0 then display a td tag with a colspan of 6 and a message of no line items added
-
-    -->
   </tbody>
 </table>
 
