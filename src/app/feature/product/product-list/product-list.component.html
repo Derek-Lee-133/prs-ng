@@ -8,12 +8,11 @@
   <table class="table table-sm table-striped">
   <thead>
       <tr>
-        <th>Id</th><th>Vendor</th><th>PartNumber</th><th>Name</th><th>Price</th><th>Unit</th><th>PhotoPath</th><th>Action</th>
+       <th>Vendor</th><th>PartNumber</th><th>Name</th><th>Price</th><th>Unit</th><th>PhotoPath</th><th>Action</th>
       </tr>
   </thead>
   <tbody>
       <tr *ngFor= 'let product of products'>
-      <td>{{product.id}}</td>
       <td>{{product.vendor.name}}</td>
       <td>{{product.partNumber}}</td>
       <td>{{product.name}}</td>
